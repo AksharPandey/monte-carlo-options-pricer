@@ -1,15 +1,19 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import Vol_calc as V
 
 
-S0 = float(input("Enter Current Stock Price: "))  # Starting Stock Price
-K = float(input("Enter end price: "))  # Strike Price - Allowed to buy at this price
-T = float(input("Enter time to expiration (Years): "))  # Time to expiration
-r = float(input("Enter risk free rate: "))  # Risk-free rate
-vol = float(input("Enter stock volatility: "))  # Stock volatility
-steps = int(input("Enter number of increments: "))  # Steps
-sims = int(input("Enter amount of simulations: "))  # Number of simulations
+K = float(input("Enter strike price: "))  # price to buy or sell
+T = float(input("Enter time to expiration (Years): "))
+r = float(input("Enter risk free rate: "))  # risk-free rate
+ticker = input("Enter ticker: ")
+period = input("Enter period (like 1mo, 1y, 1d): ")
+vol = V.volfinder(ticker, period)
+S0 = V.currentprice(ticker, period)
+steps = int(input("Enter number of increments: "))
+sims = int(input("Enter amount of simulations: "))
 pc = input("Enter Put/Call Option: ")
+
 
 
 dt = T/steps  # Time Per Step
@@ -37,7 +41,6 @@ else:
 
 print("The Option price is", np.mean(payoff) * np.exp(-r*T))
 # Discount factor so -r * T is amount of discounting
-
 plt.style.use('dark_background')
 plt.plot(CumSum[:50, :].T)
 plt.show()
