@@ -22,7 +22,8 @@ The output is an estimate. It changes slightly between runs because the shocks a
 - Inputs: K = 330 | T = 1 yr | r = [rate] | steps = 252 | sims = 10,000 | [call/put] on [ticker]
 - Volatility estimated from [window] of historical data
 
-<img width="1115" height="649" alt="Screenshot 2026-09-29 231211" src="https://github.com/user-attachments/assets/9f4edf65-fefc-4ebc-80ca-56d78277e37b" /># MC Option Pricer
+<img width="1115" height="649" alt="Screenshot 2026-09-29 231211" src="https://github.com/user-attachments/assets/9f4edf65-fefc-4ebc-80ca-56d78277e37b" />
+
 <img width="2167" height="1255" alt="image" src="https://github.com/user-attachments/assets/26082bae-10bd-482b-9034-88e1c6fafb14" />
 
 
